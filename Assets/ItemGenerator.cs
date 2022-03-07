@@ -41,15 +41,12 @@ public class ItemGenerator : MonoBehaviour
     void Update()
     {
         //ユニティちゃんの座表を取得
-        unityChanPosZ = Mathf.Ceil(unityChan.transform.position.z);
-
-        //ユニティちゃんから見て40m先にitemPositionをセット
-        itemPos = unityChanPosZ + 40.0f;
+        unityChanPosZ = unityChan.transform.position.z;
 
         if (generatPos >= startPos && generatPos < goalPos)
         {
             
-            if (generatPos == itemPos)
+            if (generatPos >= unityChanPosZ + 40.0f)
             {
 
                     //どのアイテムを出すのかをランダムに設定
